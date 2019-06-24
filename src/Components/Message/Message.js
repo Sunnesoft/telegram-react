@@ -350,7 +350,14 @@ class Message extends Component {
                                 </a>
                             </div>
                         </div>
-                        {Boolean(reply_to_message_id) && <Reply chatId={chatId} messageId={reply_to_message_id} />}
+                        {Boolean(reply_to_message_id) && (
+                            <Reply
+                                chatId={chatId}
+                                messageId={reply_to_message_id}
+                                parentChatId={chatId}
+                                parentMessageId={messageId}
+                            />
+                        )}
                         {media}
                         <div className='message-text'>{text}</div>
                         {webPage && <WebPage chatId={chatId} messageId={messageId} openMedia={this.openMedia} />}

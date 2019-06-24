@@ -16,6 +16,7 @@ import { getContent, getTitle, isDeletedMessage, getReplyPhotoSize } from '../..
 import { accentStyles } from '../Theme';
 import { openChat } from '../../Actions/Client';
 import MessageStore from '../../Stores/MessageStore';
+import ApplicationStore from '../../Stores/ApplicationStore';
 import './Reply.css';
 
 const styles = theme => ({
@@ -46,7 +47,9 @@ class Reply extends React.Component {
     handleOpen = event => {
         event.stopPropagation();
 
-        const { chatId, messageId } = this.props;
+        const { chatId, messageId, parentChatId, parentMessageId } = this.props;
+        ApplicationStore.setPrevChatId(parentChatId);
+        ApplicationStore.setPrevMessageId(parentMessageId);
 
         const message = MessageStore.get(chatId, messageId);
         if (!message) return null;

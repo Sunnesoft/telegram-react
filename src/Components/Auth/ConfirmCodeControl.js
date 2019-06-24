@@ -95,7 +95,6 @@ class ConfirmCodeControl extends React.Component {
 
     handleChange(e) {
         this.code = e.target.value;
-
         if (this.code && this.codeLength > 0 && this.code.length === this.codeLength) {
             this.handleNext();
         }

@@ -16,6 +16,8 @@ class ApplicationStore extends EventEmitter {
         this.chatId = 0;
         this.dialogChatId = 0;
         this.messageId = null;
+        this.prevChatId = 0;
+        this.prevMessageId = null;
         this.statistics = new Map();
         this.scopeNotificationSettings = new Map();
         this.authorizationState = null;
@@ -227,12 +229,42 @@ class ApplicationStore extends EventEmitter {
         this.emit(update['@type'], update);
     };
 
+    swapPrevChatId = () => {
+        const update = {
+            '@type': 'clientUpdateChatId',
+            nextChatId: this.prevChatId,
+            nextMessageId: this.prevMessageId,
+            previousChatId: this.chatId,
+            previousMessageId: this.messageId
+        };
+
+        this.chatId = this.prevChatId;
+        this.messageId = this.prevMessageId;
+        this.emit(update['@type'], update);
+    };
+
     getChatId() {
         return this.chatId;
     }
 
     getMessageId() {
         return this.messageId;
+    }
+
+    setPrevChatId(v) {
+        this.prevChatId = v;
+    }
+
+    setPrevMessageId(v) {
+        this.prevMessageId = v;
+    }
+
+    getPrevChatId() {
+        return this.prevChatId;
+    }
+
+    getPrevMessageId() {
+        return this.prevMessageId;
     }
 
     searchChat(chatId) {

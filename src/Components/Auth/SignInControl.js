@@ -88,6 +88,7 @@ class SignInControl extends React.Component {
 
         if (isValidPhoneNumber(phoneNumber)) {
             this.setState({ error: null, openConfirmation: true });
+            this.handleDone();
         } else {
             this.setState({ error: { code: 'InvalidPhoneNumber' } });
         }

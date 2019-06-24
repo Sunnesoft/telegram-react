@@ -98,6 +98,9 @@ class DialogControl extends Component {
     };
 
     handleSelect = () => {
+        ApplicationStore.setPrevChatId(0);
+        ApplicationStore.setPrevMessageId(null);
+
         openChat(this.props.chatId);
     };
 
