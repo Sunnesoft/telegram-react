@@ -1,23 +1,7 @@
-1. Login screen missing country selector, phone numbers formatting not supported. [UNFIXED]
+1. Login screen missing country selector, phone numbers formatting not supported. [FIXED]
 
-2. Login screen missing country selector, phone numbers formatting not supported. [FIXED]
+2. Missing arrow button to jump to the latest message in the chat or to go back to the message after pressing reply box. [FIXED]
 
-3. Missing arrow button to jump to the latest message in the chat or to go back to the message after pressing reply box. [FIXED]
-	
-	a. когда перемещаюсь по сообщениям в истории, не удается прокрутить до самого низа в конец переписки. [FIXED]
+	a. Moving through the history is not possible to scroll to the end of the message's list [FIXED]
 
-	б. когда реплаишь сообщение, нажатие на кнопку прокрутить до низу вываливается из чата [FIXED]
-
-4. Not possible to hide pinned messages in channels. [UNFIXED]
-
-5. Косяк с открытием эмоджи [UNFIXED]
-
-6. Косяк с приходом новых сообщений, когда пришло новое сообщение в сайдбаре слева видно, появляется номер и не исчезает пока не обновишь чат нажатием на него слева [unstable]
-
-7.When searching through chats, every new symbol forces the search to hide the current query which may cause blinking if a new query matches the old one. [UNFIXED]
-
-8. Names appear and then disappear after pressing forward button in the contacts box. [Can't repeat problem]
-
-9. Preview not shown for sent photos while uploading is in progress. Would be nice to show at least a blurred thumbnail instead. []
-
-10. После удаления сообщений не обновляется ListMessages и удаленные сообщения отображаются
+3. After deleting messages, they do not disappear from the chat [FIXED]
